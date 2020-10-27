@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-First start  json server 
+First start  json server NOTE:directory in db.json
 ### `json-server --watch db.json`
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
