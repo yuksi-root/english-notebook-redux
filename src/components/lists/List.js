@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as listActions from "../../redux/actions/listActions";
-import { ListGroup, ListGroupItem, Badge } from "reactstrap";
+import { ListGroup, ListGroupItem } from "reactstrap";
 import * as wordActions from "../../redux/actions/wordActions";
+import "./list.css"
 class List extends Component {
   componentDidMount() {
     this.props.actions.getLists();
@@ -15,11 +16,11 @@ class List extends Component {
   };
   render() {
     return (
-      <div>
-        <h3><Badge color="warning">Listeler</Badge></h3>
-        <ListGroup>
+      <div className="lists">
+        <h3 className="list_title">Lists</h3>
+        <ListGroup >
           {this.props.lists.map((list) => (
-            <ListGroupItem
+            <ListGroupItem 
               active={list.id === this.props.currentList.id}
               onClick={() => this.selectList(list)}
               key={list.id}

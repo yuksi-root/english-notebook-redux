@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import { getLists } from "../../redux/actions/listActions";
 import { saveWord } from "../../redux/actions/wordActions";
 import WordDetail from "./WordDetail";
+import WordShow from "./WordShow";
+
 function AddOrUpdateWord({
   words,
   lists,
@@ -10,15 +12,33 @@ function AddOrUpdateWord({
   getLists,
   saveWord,
   history,
-  ...props //proplarını ekle
+  ...props
 }) {
-  const [word, setWord] = useState({ ...props.word }); //word deki state i setWord ile set edebiliriz.
-  const [errors, setErrors] = useState({});
+  const [word, setWord] = useState({ ...props.word });
+  const [errors, setErrors] = useState({
+    engWordName: "EN Word Name must be filled.",
+    trWordName: "TR Word Name must be filled.",
+    engSentence: "English Sentence must be filled.",
+    trSentence: "Turkish Sentence must be filled.",
+    listId: "List Name must be select.",
+  });
+
+  function handleError() {
+    if (word.id) {
+      setErrors({
+        engWordName: "",
+        trWordName: "",
+        engSentence: "",
+        trSentence: "",
+        listId: "",
+      });
+    }
+  }
   useEffect(() => {
     if (lists.length === 0) {
-      //direk linkten geldiyse
-      getLists(); //listeyi getir
+      getLists();
     }
+    handleError();
     setWord({ ...props.word });
   }, [props.word]);
 
@@ -28,68 +48,110 @@ function AddOrUpdateWord({
       ...previousWord,
       [name]: name === "listId" ? parseInt(value, 10) : value,
     }));
+
     validate(name, value);
   }
 
   function validate(name, value) {
     switch (name + value) {
-      case "engWordName" + "":
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          engWordName: "EN Word Name must be filled.",
-        }));
+      case "engWordName" + value:
+        if (value === "") {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            engWordName: "EN Word Name must be filled.",
+          }));
+        } else {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            engWordName: "",
+          }));
+        }
         break;
-      case "trWordName" + "":
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          trWordName: "TR Word Name must be filled.",
-        }));
+      case "trWordName" + value:
+        if (value === "") {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            trWordName: "TR Word Name must be filled.",
+          }));
+        } else {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            trWordName: "",
+          }));
+        }
         break;
-      case "engSentence" + "":
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          engSentence: "English Sentence must be filled.",
-        }));
+      case "engSentence" + value:
+        if (value === "") {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            engSentence: "English Sentence must be filled.",
+          }));
+        } else {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            engSentence: "",
+          }));
+        }
         break;
-      case "trSentence" + "":
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          trSentence: "Turkish Sentence must be filled.",
-        }));
+      case "trSentence" + value:
+        if (value === "") {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            trSentence: "Turkish Sentence must be filled.",
+          }));
+        } else {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            trSentence: "",
+          }));
+        }
         break;
-      case "listId" + "":
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          listId: "List Name must be select.",
-        }));
+      case "listId" + value:
+        if (value === "") {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            listId: "List Name must be select.",
+          }));
+        } else {
+          setErrors((previousErrors) => ({
+            ...previousErrors,
+            listId: "",
+          }));
+        }
         break;
       default:
-        setErrors((previousErrors) => ({
-          ...previousErrors,
-          engWordName: "",
-          trWordName: "",
-          engSentence: "",
-          trSentence: "",
-        }));
         break;
     }
   }
 
   function handleSave(event) {
-    event.preventDefault(); //sayfanın refresh olmasını engeller.
-    saveWord(word).then(() => {
-      history.push("/");
-    });
+    event.preventDefault();
+    if (
+      errors.engSentence === "" &&
+      errors.engWordName === "" &&
+      errors.trSentence === "" &&
+      errors.trWordName === "" &&
+      errors.listId === ""
+    )
+      saveWord(word).then(() => {
+        history.push("/");
+      });
+    else {
+      alert("All blanks must be filled!");
+    }
   }
 
   return (
-    <WordDetail
-      word={word}
-      lists={lists}
-      onChange={handleChange}
-      onSave={handleSave}
-      errors={errors}
-    />
+    <Fragment>
+      <WordShow word={word} lists={lists} />
+      <WordDetail
+        word={word}
+        lists={lists}
+        onChange={handleChange}
+        onSave={handleSave}
+        errors={errors}
+      />
+    </Fragment>
   );
 }
 

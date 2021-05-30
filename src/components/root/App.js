@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import MyListDetail from "../myList/MyListDetail";
 import AddOrUpdateWord from "../words/AddOrUpdateWord";
 import NotFound from "../common/NotFound";
+
 function App() {
   return (
     <Container>

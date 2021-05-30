@@ -3,137 +3,89 @@
     {
       "id": 1,
       "listId": 1,
-      "engWordName": "brides",
-      "trWordName": "atkı",
-      "engSentence": "yok1",
-      "trSentence": "yok1"
+      "engWordName": "bride",
+      "trWordName": "gelin",
+      "engSentence": "The groom usually wears a single white carnation to match the brides dress.",
+      "trSentence": "Damat genellikle gelin elbisesine uyması için tek bir beyaz karanfil giyer. "
     },
     {
       "id": 2,
       "listId": 1,
       "engWordName": "canoe",
       "trWordName": "kano",
-      "engSentence": "yok2",
-      "trSentence": "yok2"
+      "engSentence": "It is supposed to be navigable by canoe for 900m",
+      "trSentence": "900 m kano ile gezilebilir olması gerekiyordu."
     },
     {
       "id": 3,
       "listId": 2,
       "engWordName": "defiance",
       "trWordName": "Meydan Okuma,muhalefet,saygısızlık",
-      "engSentence": "yok4",
-      "trSentence": "yok4"
+      "engSentence": "Despite her defiance, her voice shook",
+      "trSentence": "Meydan okumasına rağmen sesi titredi"
     },
     {
       "id": 4,
-      "listId": 2,
-      "engWordName": "strap",
-      "trWordName": "kayış,kelepçe,askı,halka",
-      "engSentence": "yok4",
-      "trSentence": "yok4"
+      "listId": 4,
+      "engWordName": "beam",
+      "trWordName": "ışın,kiriş,yayılmak",
+      "engSentence": "I lifted the heavy wood beam that crossed their door, securing it.",
+      "trSentence": "Kapılarını geçen ağır ahşap kirişi kaldırıp sabitledim."
     },
     {
       "id": 5,
-      "listId": 3,
-      "engWordName": "sew",
-      "trWordName": "dikmek,halletmek",
-      "engSentence": "yok5",
-      "trSentence": "yok5"
+      "listId": 5,
+      "engWordName": "fortunately",
+      "trWordName": "neyse ki",
+      "engSentence": "Fortunately, breakfast was nothing like she imagined.",
+      "trSentence": "Kapılarını geçen ağır ahşap kirişi kaldırıp sabitledim."
     },
     {
       "id": 6,
       "listId": 3,
-      "engWordName": "blae",
-      "trWordName": "rengi solmuş,kurşuni mavi,kirli",
-      "engSentence": "yok6",
-      "trSentence": "yok6"
+      "engWordName": "seem",
+      "trWordName": "görünmek",
+      "engSentence": "For some reason that didn't seem likely.",
+      "trSentence": "Kapılarını geçen ağır ahşap kirişi kaldırıp sabitledim."
     },
     {
       "id": 7,
-      "listId": 4,
-      "engWordName": "beam",
-      "trWordName": "ışın,kiriş,yayılmak",
-      "engSentence": "yok7",
-      "trSentence": "yok7"
-    },
-    {
-      "id": 8,
-      "listId": 4,
-      "engWordName": "lean",
-      "trWordName": "dayanmak,eğilmek",
-      "engSentence": "yok8",
-      "trSentence": "yok8"
-    },
-    {
-      "id": 9,
-      "listId": 5,
-      "engWordName": "corals",
-      "trWordName": "mercanlar",
-      "engSentence": "yok9",
-      "trSentence": "yok9"
-    },
-    {
-      "id": 10,
-      "listId": 5,
-      "engWordName": "rive",
-      "trWordName": "yolmak,kırılmak",
-      "engSentence": "yok10",
-      "trSentence": "yok10"
-    },
-    {
-      "engWordName": "lala",
-      "listId": 2,
-      "trWordName": "lolo",
-      "engSentence": "lala lolo",
-      "trSentence": "lolo lala",
-      "id": 11
-    },
-    {
-      "engWordName": "cousin",
-      "listId": 1,
-      "trWordName": "kuzen",
-      "engSentence": "lazy cousin",
-      "trSentence": "tembel kuzen",
-      "id": 12
-    },
-    {
-      "engWordName": "deneme",
-      "listId": 1,
-      "trWordName": "d",
-      "engSentence": "d",
-      "trSentence": "d",
-      "id": 13
+      "listId": 6,
+      "engWordName": "brought",
+      "trWordName": "verilen,getirilmiş",
+      "engSentence": "I brought you something to eat",
+      "trSentence": "Kapılarını geçen ağır ahşap kirişi kaldırıp sabitledim."
     }
   ],
   "lists": [
     {
       "id": 1,
-      "listName": "Nouns/İsimler",
+      "listName": "Nouns",
       "seoUrl": "noun"
     },
     {
       "id": 2,
-      "listName": "Pronouns/Zamirler ",
+      "listName": "Pronouns ",
       "seoUrl": "pronoun"
     },
     {
       "id": 3,
-      "listName": "Verbs/Fiiller",
+      "listName": "Verbs",
       "seoUrl": "verb"
     },
     {
       "id": 4,
-      "listName": "Adjectives/Sıfatlar",
+      "listName": "Adjectives",
       "seoUrl": "dairy-products"
     },
     {
       "id": 5,
-      "listName": "Adverbs/Zarflar",
+      "listName": "Adverbs",
       "seoUrl": "adverb"
     },
     {
       "id": 6,
-      "listName": "Irregular Verbs/Düzensiz Filler",
+      "listName": "Irregular Verbs",
       "seoUrl": "adverb"
     }
   ]

@@ -1,0 +1,28 @@
+.words{
+    padding-top: 15px;
+}
+
+.words_title {
+  background: #673ab7;
+  background: -webkit-linear-gradient(to right, #512da8, #673ab7);
+  background: linear-gradient(to right, #512da8, #673ab7);
+  color: white;
+  padding:15px;
+}
+
+.update_button{
+  padding:5px;
+  background-color: #eead0e;
+  border: 1px solid #eead0e;
+  border-radius: 10%;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover{
+  color: white;
+  text-decoration: none;
+}

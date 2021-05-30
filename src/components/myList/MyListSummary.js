@@ -21,7 +21,7 @@ class MyListSummary extends Component {
   renderEmpty() {
     return (
       <NavItem>
-        <NavLink>My List Empty</NavLink>
+        <NavLink style={{color:'red'}}>My List Empty</NavLink>
       </NavItem>
     );
   }
@@ -29,7 +29,7 @@ class MyListSummary extends Component {
   renderSummary() {
     return (
       <UncontrolledDropdown nav inNavbar>
-        <DropdownToggle nav caret>
+        <DropdownToggle style={{backgroundColor:"#673ab7",color:"white"}}nav caret>
           MyList
         </DropdownToggle>
         <DropdownMenu right>
@@ -40,7 +40,7 @@ class MyListSummary extends Component {
                 color="danger"
                 onClick={()=>this.removeFromMyList(myListItem.word)}
               >
-                remove
+                Remove
               </Badge>
             </DropdownItem>
           ))}

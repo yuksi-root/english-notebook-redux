@@ -1,0 +1,14 @@
+.lists{
+  padding-top: 15px;
+}
+
+
+.list_title {
+  background: #673ab7;
+  background: -webkit-linear-gradient(to right, #512da8, #673ab7);
+  background: linear-gradient(to right, #512da8, #673ab7);
+  color: white;
+  padding:15px;
+  color:white;
+
+}

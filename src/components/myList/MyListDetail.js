@@ -18,7 +18,8 @@ class MyListDetail extends Component {
               <th>#</th>
               <th>English Word</th>
               <th>English Sentence</th>
-              <th></th>
+              <th>Turkish Word</th>
+              <th>Turkish Sentence</th>
             </tr>
           </thead>
           <tbody>
@@ -27,7 +28,10 @@ class MyListDetail extends Component {
                 <th scope="row">{myListItem.word.id}</th>
                 <td>{myListItem.word.engWordName}</td>
                 <td>{myListItem.word.engSentence}</td>
+                <td>{myListItem.word.trWordName}</td>
+                <td>{myListItem.word.trSentence}</td>
                 <td>
+                  {console.log(myListItem.word)}
                   <Button
                     color="danger"
                     onClick={() => this.removeFromMyList(myListItem.word)}

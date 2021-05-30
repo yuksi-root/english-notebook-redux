@@ -1,4 +1,5 @@
 import React from "react";
+import "./navi.css";
 import {
   Collapse,
   Navbar,
@@ -27,15 +28,15 @@ export default class Navi extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="navbar" light expand="md">
           <NavbarBrand>
-           <Link to="/">English Notebook</Link>
+           <Link className="nav_link" to="/">English Notebook</Link>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav  className="ml-auto" navbar>
               <NavItem>
-                <NavLink><Link to="/saveWord">Add New Word</Link></NavLink>
+                <NavLink><Link className="nav_link" to="/saveWord">Add New Word</Link></NavLink>
               </NavItem>
               <MyListSummary/>
             </Nav>

@@ -4,7 +4,9 @@ import { bindActionCreators } from "redux";
 import { Badge, Table, Button } from "reactstrap";
 import * as wordActions from "../../redux/actions/wordActions";
 import * as myListActions from "../../redux/actions/myListActions";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import "./words.css";
+
 class WordList extends Component {
   componentDidMount() {
     this.props.actions.getWords();
@@ -15,10 +17,9 @@ class WordList extends Component {
 
   render() {
     return (
-      <div>
-        <h3>
-          <Badge color="warning "> Words </Badge>
-          {" ==>"}
+      <div className="words">
+        <h3 className="words_title">
+          Words {"  "}
           <Badge color="success">{this.props.currentList.listName}</Badge>
         </h3>
         <Table>
@@ -27,14 +28,15 @@ class WordList extends Component {
               <th>#</th>
               <th>English Word</th>
               <th>English Sentence</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             {this.props.words.map((word) => (
               <tr key={word.id}>
                 <th scope="row">{word.id}</th>
-                <td><Link to={"/saveWord/"+word.id}>{word.engWordName}</Link></td>
+                <td>
+                  <Link to={"/saveWord/" + word.id}>{word.engWordName}</Link>
+                </td>
                 <td>{word.engSentence}</td>
                 <td>
                   <Button
@@ -54,7 +56,6 @@ class WordList extends Component {
 }
 
 function mapStateToProps(state) {
-  //list ' in proplarına (reducer)state i bagla
   return {
     currentList: state.changeListReducer,
     words: state.wordListReducer,
@@ -63,7 +64,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  //actionları proplara bagla
   return {
     actions: {
       getWords: bindActionCreators(wordActions.getWords, dispatch),
